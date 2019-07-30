@@ -7,13 +7,13 @@ import Card from './Card';
 describe('<Card />', () =>{
   it('Renders a card', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Card />, div);
+    ReactDOM.render(<Card title='TITLE' content='HELLO' />, div);
     
     ReactDOM.unmountComponentAtNode(div);
   })
 
   it('Renders card UI as expected', () => {
-    const tree = renderer.create(<Card />).toJSON();
+    const tree = renderer.create(<Card title='TITLE' content='HELLO'/>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
